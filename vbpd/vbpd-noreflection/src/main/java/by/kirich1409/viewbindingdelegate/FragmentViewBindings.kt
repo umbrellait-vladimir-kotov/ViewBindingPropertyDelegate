@@ -66,7 +66,7 @@ private class FragmentViewBindingProperty<in F : Fragment, out T : ViewBinding>(
         }
 
         fragmentLifecycleCallbacks = ClearOnDestroy().also { callbacks ->
-            fragment.requireFragmentManager()
+            fragment.parentFragmentManager
                 .registerFragmentLifecycleCallbacks(callbacks, false)
         }
     }
